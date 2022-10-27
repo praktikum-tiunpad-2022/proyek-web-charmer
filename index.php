@@ -14,8 +14,8 @@
         </section>
         <section class="offers"> 
             <div class="content">
-                <button class="prev-btn"><img src="assets/img/arrow.png" alt=""></button>
-                <button class="next-btn"><img src="assets/img/arrow.png" alt=""></button>
+                <button class="prev-btn" onclick=""><img src="assets/img/arrow.png" alt=""></button>
+                <button class="next-btn" onclick=""><img src="assets/img/arrow.png" alt=""></button>
                 <div class="offers-container">
                     <div class="offers-card">
                         <div class="offers-image">

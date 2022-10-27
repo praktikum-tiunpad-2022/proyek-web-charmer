@@ -13,7 +13,7 @@
         if($row > 0)    //berhasil
         {
             $_SESSION['admin'] = true;
-            echo "<meta http-equiv='refresh' content='0,url=".BASE_URL."admin/index.php'>";
+            echo "<meta http-equiv='refresh' content='0,url=".BASE_URL."admin/barang.php'>";
         }
         else    //gagal
         {
@@ -53,11 +53,6 @@
             </div>
         </div>
     </div>
-
-    <script src="<?=BASE_URL;?>assets/vendor/jquery/jquery.min.js"></script>
-    <script src="<?=BASE_URL;?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?=BASE_URL;?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
 </body>
 
 </html>
