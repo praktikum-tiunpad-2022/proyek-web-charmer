@@ -1,6 +1,8 @@
 <?php 
+    session_start();
+    require "../config/connect.php"; 
+
     $title = "Login Admin";
-    require "include/head.php";
     $error = "";
     if(isset($_POST['login'])) 
     {
@@ -22,6 +24,16 @@
     }
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title><?=$title." | ".WEBNAME;?></title>
+    </head>
 <body class="bg-dark">
 
     <div class="container">

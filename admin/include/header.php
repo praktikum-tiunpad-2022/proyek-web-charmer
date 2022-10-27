@@ -39,6 +39,6 @@
                         </li>
                     </ul>
                 </div>
-                <a class="btn btn-danger" href="login.php">Logout</a>
+                <a class="btn btn-danger" href="logout.php">Logout</a>
             </div>
         </nav>
