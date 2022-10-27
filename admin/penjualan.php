@@ -1,6 +1,6 @@
 <?php 
     $title = "Daftar Penjualan";
-    require "includes/header.php"; 
+    require "include/header.php"; 
 ?>
 
             <div class="container-fluid">

@@ -1,6 +1,6 @@
 <?php 
     $title = "Dashboard Admin";
-    require "includes/header.php"; 
+    require "include/header.php"; 
     
     if (!isset($_SESSION)) 
     {

@@ -7,8 +7,8 @@
             <div class="content">
                 <h1>K-Pop Official Merchandise Store</h1>
                 <div>
-                    <button class="signup-btn" type="button"><a href="login.php"><span class="cover"></span>SIGN UP</a></button>
-                    <button class="login-btn" type="button"><a href="login.php"><span class="cover"></span>SIGN IN</a></button>
+                    <button class="signup-btn" type="button"><a href="login.php" style="color: #212121;"><span class="cover"></span>SIGN UP</a></button>
+                    <button class="login-btn" type="button"><a href="login.php" style="color: #212121;"><span class="cover"></span>SIGN IN</a></button>
                 </div>
             </div>
         </section>

@@ -1,6 +1,6 @@
 <?php 
     $title = "Login Admin";
-    require "includes/head.php";
+    require "include/head.php";
     $error = "";
     if(isset($_POST['login'])) 
     {
@@ -42,8 +42,7 @@
                         </div>
                     </div>
                     <div style="margin-top: 20px;">
-                            <input type="submit" class="btn btn-primary btn-block" value="Login" name="login">
-                        </div>
+                        <input type="submit" class="btn btn-primary btn-block" value="Login" name="login">
                     </div>
                 </form>
                 <p><?=$error;?></p>

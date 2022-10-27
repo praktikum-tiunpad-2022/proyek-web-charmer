@@ -117,23 +117,7 @@ nav .navbar ul li a:hover {
     line-height: 25px;
 }
 
-.login-btn {
-    width: 175px;
-    padding: 10px 0;
-    text-align: center;
-    margin: 20px 10px;
-    font-size: 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    border: 2px solid #C86B85;
-    background: transparent;
-    color: #212121;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.signup-btn {
+button.signup-btn {
 	width: 175px;
 	padding: 10px 0;
 	text-align: center;
@@ -143,10 +127,24 @@ nav .navbar ul li a:hover {
 	font-weight: bold;
 	border: 2px solid #C86B85;
 	background: transparent;
-	color: #212121;
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
+}
+
+button.login-btn {
+    width: 175px;
+    padding: 10px 0;
+    text-align: center;
+    margin: 20px 10px;
+    font-size: 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 2px solid #C86B85;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
 .cover {

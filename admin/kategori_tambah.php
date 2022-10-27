@@ -1,6 +1,6 @@
 <?php 
     $title = "Tambah Kategori";
-    require "includes/header.php";
+    require "include/header.php";
 
     if(isset($_POST['insert']))  
     {

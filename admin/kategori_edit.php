@@ -1,6 +1,6 @@
 <?php 
     $title = "Edit Kategori";
-    require "includes/header.php";
+    require "include/header.php";
 
     $id = $_GET['id'];
 
