@@ -9,7 +9,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Daftar Transaksi</title>
+        <title>Daftar Kategori</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <style>
         body{
@@ -27,35 +27,23 @@
     </head>
 
     <body>
-        <h1>Data Table Transaksi</h1>
+        <h1>Data Table Kategori</h1>
+        <a href="/create" role="button" class="btn btn-secondary">Add New Kategori</a>
         <table class="table table-warning">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Tanggal</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">Alamat</th>
-                    <th scope="col">No. Handphone</th>
-                    <th scope="col">Nama Rekening</th>
-                    <th scope="col">No. Rekening</th>
-                    <th scope="col">Bank</th>
-                    <th scope="col">Order</th>
-                    <th scope="col">Total</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($Transaksi as $row) : ?>
+                <?php foreach($Kategori as $row) : ?>
                     <tr>
-                        <td><?= $row['tgl_transaksi']; ?></td>
-                        <td><?= $row['nama_buyer']; ?></td>
-                        <td><?= $row['alamat_buyer']; ?></td>
-                        <td><?= $row['telp_buyer']; ?></td>
-                        <td><?= $row['namarek_buyer']; ?></td>
-                        <td><?= $row['norek_buyer']; ?></td>
-                        <td><?= $row['bank_buyer']; ?></td>
+                        <td><?= $row['nama_kategori']; ?></td>
                         <td>
-                            <a href="/detail/<?= $row['id_transaksi']; ?>" class="btn btn-warning">Detail</a>
+                            <a href="/edit_ktg/<?= $row['id_kategori']; ?>" class="btn btn-warning">Edit</a>
+                            <a href="/delete_ktg/<?= $row['id_kategori']; ?>" class="btn btn-danger">Delete</a>
                         </td>
-                        <td><?= $row['total_transaksi']; ?></td>
                     </tr>
                     <?php endforeach; ?>
             </tbody>

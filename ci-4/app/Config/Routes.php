@@ -48,6 +48,13 @@ $routes->get('edit/(:num)','Barang::edit/$1');
 $routes->post('edit/(:num)','Barang::update/$1');
 $routes->get('delete/(:num)','Barang::delete/$1');
 $routes->get('/transaksi','Transaksi::index');
+$routes->post('detail/(:num)','Transaksi::detail/$1');
+$routes->get('/kategori','Kategori::index');
+$routes->get('create','Kategori::create1');
+$routes->post('/kategori','Kategori::save1');
+$routes->get('edit_ktg/(:num)','Kategori::edit1/$1');
+$routes->post('edit_ktg/(:num)','Kategori::update1/$1');
+$routes->get('delete_ktg/(:num)','Kategori::delete1/$1');
 //$routes->match(['get','post'], 'register', 'Auth::register');
 //$routes->get('barang','Barang::index',['filter' => 'auth']);
 

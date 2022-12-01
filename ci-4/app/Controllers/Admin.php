@@ -14,8 +14,8 @@ class Admin extends BaseController
         return view('Transaksi');
     }
     
-    /*public function faqs()
+    public function kategori()
     {
-        return view('pages/faqs');
-    }*/
+        return view('Kategori');
+    }
 }

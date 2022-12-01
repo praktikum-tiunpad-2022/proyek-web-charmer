@@ -22,6 +22,9 @@
                 <li class="nav-item">
                     <a class="nav-link <?= $isActivepage('transaksi'); ?>" href="/transaksi">Transaksi</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link <?= $isActivepage('kategori'); ?>" href="/kategori">Kategori</a>
+                </li>
             <ul>
         </div>
     </div>
