@@ -9,7 +9,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Daftar Barang</title>
+        <title>Daftar Transaksi</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <style>
         body{
@@ -27,33 +27,31 @@
     </head>
 
     <body>
-        <h1>Data Table Barang</h1>
-        <a href="/new" role="button" class="btn btn-secondary">Add New Album</a>
+        <h1>Data Table Transaksi</h1>
         <table class="table table-warning">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Image</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Artist</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Stock</th>
-                    <th scope="col">Kategori</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Telp</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">No. Rekening</th>
+                    <th scope="col">Nama Rekening</th>
+                    <th scope="col">Bank</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($Barang as $row) : ?>
+                <?php foreach($Transaksi as $row) : ?>
                     <tr>
-                        <td><?= $row['img_brg']; ?></td>
-                        <td><?= $row['nama_brg']; ?></td>
-                        <td><?= $row['nama_artis']; ?></td>
-                        <td><?= $row['harga_brg']; ?></td>
-                        <td><?= $row['stok_brg']; ?></td>
-                        <td><?= $row['id_kategori']; ?></td>
-                        <td>
-                            <a href="/edit/<?= $row['id_brg']; ?>" class="btn btn-warning">Edit</a>
-                            <a href="/delete/<?= $row['id_brg']; ?>" class="btn btn-danger">Delete</a>
-                        </td>
+                        <td><?= $row['nama_buyer']; ?></td>
+                        <td><?= $row['alamat_buyer']; ?></td>
+                        <td><?= $row['telp_buyer']; ?></td>
+                        <td><?= $row['total_transaksi']; ?></td>
+                        <td><?= $row['tgl_transaksi']; ?></td>
+                        <td><?= $row['norek_buyer']; ?></td>
+                        <td><?= $row['namarek_buyer']; ?></td>
+                        <td><?= $row['bank_buyer']; ?></td>
                     </tr>
                     <?php endforeach; ?>
             </tbody>

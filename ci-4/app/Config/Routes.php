@@ -17,7 +17,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Auth');
+$routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -35,15 +35,21 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->match(['get','post'],'/', 'Auth::index');
-$routes->get('logout','Auth::logout');
-$routes->get('/create','Barang::create');
-$routes->post('/save','Barang::save');
+//$routes->match(['get','post'],'/', 'Auth::index');
+//$routes->get('logout','Auth::logout');
+
+$routes->get('/', 'Home::index');
+
+//$routes->get('/','Barang::index');
+$routes->get('/barang','Barang::index');
+$routes->get('new','Barang::create');
+$routes->post('/','Barang::save');
 $routes->get('edit/(:num)','Barang::edit/$1');
 $routes->post('edit/(:num)','Barang::update/$1');
 $routes->get('delete/(:num)','Barang::delete/$1');
-$routes->match(['get','post'], 'register', 'Auth::register');
-$routes->get('barang','Barang::index',['filter' => 'auth']);
+$routes->get('/transaksi','Transaksi::index');
+//$routes->match(['get','post'], 'register', 'Auth::register');
+//$routes->get('barang','Barang::index',['filter' => 'auth']);
 
 /*
  * --------------------------------------------------------------------

@@ -31,7 +31,7 @@ class Barang extends BaseController
             'id_kategori' => $this->request->getPost('id_kategori'),
         ];
         $model->saveBarang($data);
-        return redirect()->to('Barang');
+        return redirect()->to('/barang');
     }
 
     public function edit($id_brg) {
@@ -53,12 +53,12 @@ class Barang extends BaseController
             'id_kategori' => $this->request->getPost('id_kategori'),
         ];
         $model->updateBarang($id_brg, $data);
-        return redirect()->to('Barang');
+        return redirect()->to('/barang');
     }
 
     public function delete($id_brg) {
         $model  = new BarangModel();
         $model->deleteBarang($id_brg);
-        return redirect()->to('Barang');
+        return redirect()->to('/barang');
     }
 }

@@ -1,3 +1,7 @@
+<?= $this->extend('/Admin'); ?>          
+
+<?= $this->section('content'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -47,9 +51,15 @@
             </div>
             <div class="mb-3">
                 <label for="img_brg" class="form-label">Image</label>
-                <input type="file" name="tahun" id="img_brg" class="form-control" value="<?= $Barang['img_brg'] ?>" required>
+                <input type="file" name="img_brg" id="img_brg" class="form-control" value="<?= $Barang['img_brg'] ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="id_kategori" class="form-label">Kategori</label>
+                <input type="text" name="id_kategori" id="id_kategori" class="form-control" value="<?= $Barang['id_kategori'] ?>" required>
             </div>
             <button type="submit" class="btn btn-success">Update</button>
         </form>
     </body>
 </html>
+
+<?= $this->endSection('content'); ?>
