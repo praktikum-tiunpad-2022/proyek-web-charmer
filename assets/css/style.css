@@ -19,21 +19,33 @@ nav {
     height: 80px;
     width: 100%;
     padding: 0 100px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 nav img {
-    width: 10%;
+    width: 15%;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 nav ul {
     position: relative;
     display: flex;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 nav ul li {
     display: inline-block;
     line-height: 40px;
     margin: 0 5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 nav ul li a {
@@ -43,6 +55,11 @@ nav ul li a {
     padding: 8px 20px;
     letter-spacing: 0.2px;
     font-weight: 600;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    line-height: 1.5;
+	font-family: 'Inter', sans-serif;
 }
 
 nav ul li a:hover {
@@ -53,11 +70,19 @@ nav ul li a:hover {
 nav .navbar ul {
     position: relative;
     display: flex;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 nav .navbar ul li {
     display: inline-block;
     line-height: 40px;
+    color: #FFFFFF;
+    font-size: 14px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 nav .navbar ul li a {
@@ -65,6 +90,11 @@ nav .navbar ul li a {
     color: #FFFFFF;
     font-size: 14px;
     padding: 8px 10px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    line-height: 1.5;
+	font-family: 'Inter', sans-serif;
 }
 
 nav .navbar ul li a:hover {
@@ -88,13 +118,72 @@ nav .navbar ul li a:hover {
 .content h2 {
     font-weight: 700;
     margin-top: 5px;
+    color: #212121;
 }
 
 .content p {
-    margin: 0 0 40px 0;
+    margin: 0 0 10px 0;
     font-weight: 400;
     font-size: 15px;
     color: #a7a7a7;
+}
+
+.login .form-container {
+   min-height: 78vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+   background: #FFFFFF;
+}
+
+.login .form-container form {
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0 5px 10px rgba(0,0,0,.1);
+   background: #FFFFFF;
+   text-align: center;
+   width: 420px;
+}
+
+.login .form-container form input, .form-container form select {
+   width: 100%; 
+   padding:10px 15px;
+   font-size: 14px;
+   margin:8px 0;
+   background: #FFFFFF;
+   border-radius: 5px;
+   border-width: thin;
+   border-color: #212121;
+}
+
+.login .form-container form select option {
+   background: #fff;
+}
+
+.login .form-container form .sign-cta {
+    color: #212121;
+    cursor: pointer;
+    text-decoration:underline;
+}
+
+.login .form-container form .sign-cta:hover {
+    color: #C86B85;
+    transition: ease 0.5s;
+}
+ 
+.login .form-container form .form-btn {
+   background: #C86B85;
+   color: #FFFFFF;
+   text-transform: capitalize;
+   font-size: 14px;
+   cursor: pointer;
+}
+
+.login .form-container form .form-btn:hover {
+   background: #212121;
+   color: #C86B85;
+   transition: ease 0.5s;
 }
 
 .intro {
@@ -115,6 +204,10 @@ nav .navbar ul li a:hover {
 .intro .content p {
     margin: 10px auto;
     line-height: 25px;
+}
+
+center {
+	text-align: center;
 }
 
 button.signup-btn {
@@ -170,7 +263,7 @@ button:hover {
 .offers {
     position: relative;
     overflow: hidden;
-    padding: 50px 20px;
+    padding: 0px 20px;
     margin: 0 50px;
 }
 
@@ -200,6 +293,44 @@ button:hover {
 }
 
 .offers-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.events {
+    position: relative;
+    overflow: hidden;
+    padding: 0px 20px;
+    margin: 0 50px;
+}
+
+.events-container {
+    padding: 0 2vw 0 2vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.events-container::-webkit-scrollbar {
+    display: none;
+}
+
+.events-card {
+    flex: 0 0 auto;
+    width: 375px;
+    height: 375px;
+    margin-right: 40px;
+}
+
+.events-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.events-thumb {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -239,16 +370,21 @@ button:hover {
 .product {
     position: relative;
     overflow: hidden;
-    padding: 50px 20px 0px 20px;
+    padding: 0px 20px;
     margin: 0 50px;
 }
 
 .product-category {
-    padding: 0 10vw;
+    padding: 0 10vw 0 10vw;
     font-size: 30px;
     font-weight: 500;
-    margin-bottom: 40px;
+    margin-bottom: 8px;
     text-transform: capitalize;
+}
+
+.cart-products {
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .product-container {
@@ -265,7 +401,14 @@ button:hover {
 .product-card {
     flex: 0 0 auto;
     width: 250px;
-    height: 450px;
+    height: 400px;
+    margin-right: 40px;
+}
+
+.celeb-card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 350px;
     margin-right: 40px;
 }
 
@@ -300,15 +443,17 @@ button:hover {
     transform: translateX(-50%);
     padding: 10px;
     width: 90%;
+    height: 37px;
     font-weight: 600;
     text-transform: capitalize;
     border: none;
     outline: none;
-    background: #fff;
+    background: #F3D7CA;
     border-radius: 5px;
-    transition: 0.5s;
     cursor: pointer;
     opacity: 0;
+    font-size: 14px;
+    color: #212121;
 }
 
 .product-card:hover .card-btn {
@@ -317,6 +462,7 @@ button:hover {
 
 .card-btn:hover {
     background: #C86B85;
+    transition: ease 0.5s;
     color: #fff;
 }
 
@@ -349,6 +495,43 @@ button:hover {
     margin-left: 20px;
     opacity: 0.5;
     text-decoration: line-through;
+}
+
+.grand-total .content {
+    margin-top: 21px;
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+    background-color: #F3D7CA;
+}
+
+table {
+    margin-top: 25px;
+}
+
+.btn-cart {
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid #C86B85;
+    background: #C86B85;
+    padding: 7px 18px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    color: #fff;
+    letter-spacing: 0.2px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+.btn-cart:hover {
+    border: 1px solid #C86B85;
+    background: #F3D7CA;
+    color: #C86B85;
+    transition: ease 0.5s;
+}
+
+.btn-cart i {
+    margin-left: 13px;
 }
 
 .footer {

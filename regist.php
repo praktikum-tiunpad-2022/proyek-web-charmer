@@ -1,24 +1,22 @@
 <?php 
-    $title = "Sign In";
+    $title = "Sign Up";
     require "config/connect.php"; 
 	session_start();
     $error = "";
-
-    if(isset($_POST['login'])) {
+	
+    if(isset($_POST['register'])) {
         $usn = $_POST['usn'];
-        $pass = MD5($_POST['pass']);    // password dienkripsi
+        $pass = MD5($_POST['pass']);    //password dienkripsi
+        $tgl = date("Y-m-d H:i:s");
 
-		$result = mysqli_query($connect, "SELECT * FROM buyer WHERE usn_buyer = '$usn' && pass_buyer = '$pass'");
+		$result = mysqli_query($connect, "SELECT * FROM buyer WHERE usn_buyer = '$usn'");
         $row = mysqli_num_rows($result);
 
         if($row == 1) {
-			$row = mysqli_fetch_assoc($result);
-			$id_buyer = $row['id_buyer'];
-			$_SESSION['usn'] = $usn;
-			$_SESSION['id_buyer'] = $id_buyer;
-			echo "<meta http-equiv='refresh' content='0,url=".BASE_URL."index.php'>";
+            $error = "Username Already Taken!";
         } else {
-            $error = "Failed Sign In. Please double check your username or password!";
+			$regist = mysqli_query($connect, "INSERT INTO buyer (usn_buyer, tgl_akun_buyer, pass_buyer) VALUES ('$usn', '$tgl', '$pass')");
+			echo "<meta http-equiv='refresh' content='0,url=".BASE_URL."login.php'>";
 		}
     }
 ?>
@@ -53,11 +51,11 @@
 		<section class="login">
 			<div class="form-container">
 				<form action="#" method="post">
-					<h2>Sign In</h2>
+					<h2>Sign Up</h2>
 					<input type="text" name="usn" placeholder="Enter Your Username" required=" ">
 					<input type="password" name="pass" placeholder="Enter Your Password" required=" ">
-					<input type="submit" name="login" value="Sign In Now!" class="form-btn">
-					<p>Don't Have an Account? <a class="sign-cta" href="regist.php"><u>Sign Up Now!</u></a></p>
+					<input type="submit" name="register" value="Sign Up Now!" class="form-btn">
+					<p>Already Have an Account? <a class="sign-cta" href="login.php">Sign In Now!</a></p>
 				</form>
                 <p><?=$error;?></p>
 			</div>
