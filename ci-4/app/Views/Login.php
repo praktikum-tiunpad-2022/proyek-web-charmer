@@ -42,7 +42,7 @@
         </div>
         <div class="mb-3">
             <label for="pass_adm" class="form-label">Password</label>
-            <input type="password" name="pass_adm" id="pass_adm" class="form-control" value="" required>
+            <input type="password" name="pass_adm" id="pass_adm" class="form-control" required>
         </div>
         <?php if(isset($validation)) : ?>
             <?= $validation->listErrors() ?>

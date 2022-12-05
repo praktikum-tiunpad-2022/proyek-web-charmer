@@ -18,8 +18,8 @@ class User extends Model
     protected $beforeUpdate   = ['hashPassword'];
    
     protected function hashPassword(array $data) {
-        if(isset($data['data']['pass_adm'])) {
-            $data['data']['pass_adm'] = password_hash($data['data']['pass_adm'], PASSWORD_DEFAULT);
+        if(isset($data['data']['password'])) {
+            $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
         }
         return $data;
     }
