@@ -1,78 +1,52 @@
 <?php 
     $title = "Daftar Barang";
-    require "include/header.php"; 
+    require "includes/header.php"; 
 ?>
-                <div class="container-fluid">
-
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="index.php">Dashboard</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <a href="barang.php">Barang</a>
-                        </li>
-                    </ol>
-
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <i class="fas fa-table"></i> Data Table Barang
-                            <a href="barang_tambah.php" class="btn btn-sm btn-secondary">Tambah</a>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Image</th>
-                                            <th>Name</th>
-                                            <th>Artist</th>
-                                            <th>Price</th>
-                                            <th>Stock</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    
-                                    <tbody>
-                                        <?php
-                                            $query = mysqli_query($connect, "SELECT * FROM barang ");
-                                            $data = mysqli_fetch_assoc($query);
-                                            if(mysqli_num_rows($query) > 0)
-                                            {
-                                                $no = 1;
-                                                do
-                                                {
-                                                    ?>
-                                                    <tr>
-                                                        <td><?=$no++;?></td>
-                                                        <td><img src="<?=BASE_URL;?>assets/img/<?=$data['img_brg'];?>" style="width: 100px;"></td>
-                                                        <td><?=$data['nama_brg'];?></td>
-                                                        <td><?=$data['nama_artis'];?></td>
-                                                        <td>$<?=$data['harga_brg'];?></td>
-                                                        <td><?=$data['stok_brg'];?></td>
-                                                        <td>
-                                                            <a href="barang_edit.php?id=<?=$data['id_brg'];?>"class="btn btn-sm btn-success">Edit<a>  
-                                                            <a href="barang_delete.php?id=<?=$data['id_brg'];?>"class="btn btn-sm btn-danger">Hapus<a>
-                                                        </td>       
-                                                    </tr>
-                                                    <?php
-                                                }
-                                                while($data = mysqli_fetch_assoc($query));
-                                            }
-                                            else
-                                            {
-                                                echo "<tr><td colspan='7'><center>Belum ada data!</center></td></tr>";
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
+        <section class="dashboard">
+            <div class="content">
+                <h2 class="product-category">Product  <a class="btn-cart" href="barang_tambah.php">Add<i class="fa fa-plus"></i></a></h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Artist</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $query = mysqli_query($connect, "SELECT * FROM barang ");
+                            $data = mysqli_fetch_assoc($query);
+                            if(mysqli_num_rows($query) > 0) {
+                                $no = 1;
+                                do {
+                        ?>
+                                    <tr>
+                                        <td><?=$no++;?></td>
+                                        <td><img src="<?=BASE_URL;?>assets/img/<?=$data['img_brg'];?>" style="width: 250px;"></td>
+                                        <td><?=$data['nama_brg'];?></td>
+                                        <td><?=$data['nama_artis'];?></td>
+                                        <td><?=$data['harga_brg'];?></td>
+                                        <td><?=$data['stok_brg'];?></td>
+                                        <td>
+                                            <a href="barang_edit.php?id=<?=$data['id_brg'];?>"class="btn btn-sm btn-success">Edit<a>  
+                                            <a href="barang_delete.php?id=<?=$data['id_brg'];?>"class="btn btn-sm btn-danger">Delete<a>
+                                        </td>       
+                                    </tr>
+                        <?php
+                                } while($data = mysqli_fetch_assoc($query));
+                            } else {
+                                echo "<tr><td colspan='7'><center>Belum ada data!</center></td></tr>";
+                            }
+                        ?>
+                    </tbody>
+                </table>
             </div>
-        </div>
-    </body>
-</html>
+        </section>
+<?php 
+	require "includes/footer.php";
+?>

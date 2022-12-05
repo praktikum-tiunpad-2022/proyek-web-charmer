@@ -3,7 +3,6 @@
 ## Anggota Tim
 | NPM           | Name                 |
 | ------------- |----------------------|
-| 140810210047  | Alifian Latif Muksit |
 | 140810210063  | Sarah Khairunnisa P. |
 | 140810210065  | Zakia Noorardini     |
 
@@ -20,7 +19,6 @@ Anak muda, penggemar artis korea (KPOP)
 https://www.figma.com/file/J4rF6wuzsHCxb44llxlyFv/Mockup-Kasar-PemWeb?node-id=0%3A1
 
 ## Skema Database
-https://drive.google.com/file/d/1e3tSKzpR0qtnv2yZo0mXjWvIR85Sm4Ae/view?usp=sharing
-
+<img src="UML.jpg">
 
 proyek-web-charmer created by GitHub Classroom

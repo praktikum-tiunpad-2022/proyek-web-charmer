@@ -1,4 +1,4 @@
-        <footer class="footer">
+<footer class="footer">
             <div class="footer-container">
                 <div class="footer-row">
                     <div class="footer-col">
@@ -40,7 +40,7 @@
                     <div class="footer-bottom">
                         <div class="bottom">
                             <ul>
-                                <img style="background-color: #C86B85;" src="assets/img/logo.png">
+                                <img src="assets/img/logo2.jpg">
                             </ul>
                         </div>
                         <div class="bottom">
