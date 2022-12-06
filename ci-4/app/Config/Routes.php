@@ -35,7 +35,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->match(['get','post'],'/', 'Auth::index');
+$routes->match(['get','post'],'/admin', 'Auth::index');
 $routes->get('logout','Auth::logout');
 //$routes->get('home','Home::index',['filter' => 'auth']);
 $routes->get('barang','Barang::index',['filter' => 'auth']);
@@ -49,9 +49,9 @@ $routes->get('edit/(:num)','Barang::edit/$1');
 $routes->post('edit/(:num)','Barang::update/$1');
 $routes->get('delete/(:num)','Barang::delete/$1');
 $routes->get('detail/(:num)','Transaksi::detail/$1');
-$routes->get('create','Kategori::create1');
+$routes->get('/create','Kategori::create1');
 $routes->post('/kategori','Kategori::save1');
-$routes->get('/home','Transaksi::home');
+$routes->get('dashboard','Transaksi::home');
 $routes->get('edit_ktg/(:num)','Kategori::edit1/$1');
 $routes->post('edit_ktg/(:num)','Kategori::update1/$1');
 $routes->get('delete_ktg/(:num)','Kategori::delete1/$1');

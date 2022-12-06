@@ -33,4 +33,12 @@ class Transaksi extends Model
     public function deleteTransaksi($id_transaksi) {
         return $this->delete($id_transaksi);
     }
+
+    public function getAll() {
+        $builder = $this->db->table('transaksi');
+        $builder->select('cart.img_brg, cart.nama_brg, cart.harga_brg');
+        $builder->join('cart', 'transaksi.id_transaksi = cart.id_transaksi');
+        $query = $builder->get();
+        return $query->getResult();
+    }
 }

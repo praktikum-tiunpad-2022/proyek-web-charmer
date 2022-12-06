@@ -20,19 +20,19 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($Transaksi as $row) : ?>
+                <?php foreach($Transaksi as $row => $value) : ?>
                     <tr>
-                        <td><?= $row['tgl_transaksi']; ?></td>
-                        <td><?= $row['nama_buyer']; ?></td>
-                        <td><?= $row['alamat_buyer']; ?></td>
-                        <td><?= $row['telp_buyer']; ?></td>
-                        <td><?= $row['namarek_buyer']; ?></td>
-                        <td><?= $row['norek_buyer']; ?></td>
-                        <td><?= $row['bank_buyer']; ?></td>
+                        <td><?= $value['tgl_transaksi']; ?></td>
+                        <td><?= $value['nama_buyer']; ?></td>
+                        <td><?= $value['alamat_buyer']; ?></td>
+                        <td><?= $value['telp_buyer']; ?></td>
+                        <td><?= $value['namarek_buyer']; ?></td>
+                        <td><?= $value['norek_buyer']; ?></td>
+                        <td><?= $value['bank_buyer']; ?></td>
                         <td>
-                            <a href="/detail/<?= $row['id_transaksi']; ?>" class="sign_cta">Detail</a>
+                            <a href="/detail/<?= $value['id_transaksi'];?>" class="sign_cta">Detail</a>
                         </td>
-                        <td>$<?= $row['total_transaksi']; ?></td>
+                        <td>$<?= $value['total_transaksi']; ?></td>
                     </tr>
                     <?php endforeach; ?>
             </tbody>

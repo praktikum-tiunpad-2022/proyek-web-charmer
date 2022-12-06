@@ -24,7 +24,7 @@
     
     <section class="login">
         <div class="form-container">
-            <form action="/" method="post">
+            <form action="/admin" method="post">
                 <h2>Sign In</h2>
 				<input type="text" name="email" placeholder="Enter Your Email" value="<?= set_value('email') ?>" required=" ">
 				<input type="password" name="password" placeholder="Enter Your Password" value="" required=" ">

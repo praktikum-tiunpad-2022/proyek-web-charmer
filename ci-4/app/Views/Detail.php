@@ -5,7 +5,7 @@
 <section class="dashboard">
     <div class="content">
         <h2 class="product-category">Detail Order</h2>
-        <form action="/detail/<?= $Cart['id_transaksi'] ?>" method="post">
+        <form action="/detail/" method="post">
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -15,11 +15,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><img src="assets/img/<?=$Cart['img_brg'];?>" style="width: 250px;"></td>
-                        <td><?= $Cart['nama_brg']; ?></td>
-                        <td><?= $Cart['harga_brg']; ?></td>
-                    </tr>
+                    <?php foreach ($Cart as $key => $value) : ?>
+                        <tr>
+                            <td><img src="assets/img/<?=$value->img_brg?>" style="width: 250px;"></td>
+                            <td><?= $value->nama_brg ?></td>
+                            <td><?= $value->harga_brg ?></td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </form>

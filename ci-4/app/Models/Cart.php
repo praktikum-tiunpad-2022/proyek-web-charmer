@@ -26,7 +26,7 @@ class Cart extends Model
         if($id_transaksi == false) {
             return $this->findAll();
         } else {
-            return $this->where('id_transaksi',$id_transaksi)->first();
+            return $this->where('id_cart',$id_transaksi)->first();
         }
     }
 
@@ -40,5 +40,12 @@ class Cart extends Model
 
     public function deleteCart($id_cart) {
         return $this->delete($id_cart);
+    }
+
+    public function getAll() {
+        $builder = $this->db->table('cart');
+        $builder->join('transaksi', 'transaksi.id_transaksi = cart.id_transaksi');
+        $query = $builder->get();
+        return $query->getResult();
     }
 }
