@@ -16,7 +16,7 @@
                 <select name="id_kategori" class="form-control" required>
                     <option value="" hidden>-- Choose Product Category</option>
                     <?php foreach ($Kategori as $key => $value) : ?>
-                        <option value="<?= $value->id_kategori ?>"><?= $value->nama_kategori ?></option>
+                        <option value="<?=$value['id_kategori'];?>"><?=$value['nama_kategori'];?></option>
                     <?php endforeach; ?>
                 </select>
             </div>

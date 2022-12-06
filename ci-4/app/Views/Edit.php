@@ -11,7 +11,14 @@
             <input type="text" for="harga_brg" name="harga_brg" id="harga_brg" value="<?= $Barang['harga_brg'] ?>" placeholder="Product Price" required=" ">
             <input type="text" for="stok_brg" name="stok_brg" id="stok_brg" value="<?= $Barang['stok_brg'] ?>" placeholder="Product Stock" required=" ">
             <input type="file" for="img_brg" name="img_brg" id="img_brg" value="<?= $Barang['img_brg'] ?>" placeholder="Product Image" required=" ">
-            <input type="text" for="id_kategori" name="id_kategori" id="id_kategori" value="<?= $Barang['id_kategori'] ?>" placeholder="Product Category" required=" ">
+            <div>
+                <select name="id_kategori" class="form-control" required>
+                    <option value="" hidden>-- Choose Product Category</option>
+                    <?php foreach ($Kategori as $key => $value) : ?>
+                        <option value="<?=$value['id_kategori'];?>"><?=$value['nama_kategori'];?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
             <input type="submit" name="update" value="Edit Product" class="form-btn">
         </form>
     </div>

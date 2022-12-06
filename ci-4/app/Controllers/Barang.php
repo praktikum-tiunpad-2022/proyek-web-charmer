@@ -25,7 +25,7 @@ class Barang extends BaseController
 
     public function create() {
         $data = [
-            'Kategori' => $this->kategori->findAll(),
+            'Kategori' => $this->kategori->getKategori(),
         ];
         return view('add', $data);
     }
@@ -45,6 +45,7 @@ class Barang extends BaseController
 
     public function edit($id_brg) {
         $data   = [
+            'Kategori' => $this->kategori->getKategori(),
             'Barang' => $this->barang->getBarang($id_brg),
         ];
         return view('edit',$data);
