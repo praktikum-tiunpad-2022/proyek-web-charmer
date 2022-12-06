@@ -30,7 +30,7 @@
                         <td><?= $row['norek_buyer']; ?></td>
                         <td><?= $row['bank_buyer']; ?></td>
                         <td>
-                            <a href="/detail/<?= $row['id_transaksi']; ?>" class="btn btn-warning">Detail</a>
+                            <a href="/detail/<?= $row['id_transaksi']; ?>" class="sign_cta">Detail</a>
                         </td>
                         <td>$<?= $row['total_transaksi']; ?></td>
                     </tr>

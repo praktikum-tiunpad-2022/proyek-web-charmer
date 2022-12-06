@@ -17,6 +17,15 @@ class Transaksi extends BaseController
         return view('Transaksi', $data);
     }
 
+    public function home()
+    {
+        $model  = new TransaksiModel();
+        $data   = [
+            'Transaksi' => $model->getTransaksi(),
+        ];
+        return view('Home', $data);
+    }
+
     public function create2() {
         return view('add');
     }

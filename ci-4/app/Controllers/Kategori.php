@@ -51,4 +51,13 @@ class Kategori extends BaseController
         $model->deleteKategori($id_kategori);
         return redirect()->to('/kategori');
     }
+
+    public function product()
+    {
+        $model  = new KategoriModel();
+        $data   = [
+            'Kategori' => $model->getKategori(),
+        ];
+        return view('Add', $data);
+    }
 }

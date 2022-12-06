@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class Cart extends Model
 {
     protected $table            = 'cart';
-    protected $primaryKey       = 'id_cart';
+    protected $primaryKey       = 'id_car';
     protected $protectFields    = true;
     protected $allowedFields    = [
         'nama_brg', 'nama_artis', 'harga_brg', 'qyt_brg', 'img_brg', 'id_buyer', 'id_brg',

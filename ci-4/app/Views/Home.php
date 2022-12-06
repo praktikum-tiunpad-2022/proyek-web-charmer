@@ -1,8 +1,37 @@
-<?= $this->extend('/Admin'); ?>
+<?= $this->extend('/Admin'); ?>          
 
 <?= $this->section('content'); ?>
-<p class="h1 mt-3">Home</p>
-<hr>
-<p>Selamat datang, ini adalah page admin dari <code>Web Charmer!</code></p>
+
+<section class="dashboard">
+    <div class="content">
+        <h2 class="product-category">Dashboard</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>Order</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($Transaksi as $row) : ?>
+                    <tr>
+                        <td><?= $row['tgl_transaksi']; ?></td>
+                        <td><?= $row['nama_buyer']; ?></td>
+                        <td><?= $row['alamat_buyer']; ?></td>
+                        <td><?= $row['telp_buyer']; ?></td>
+                        <td>
+                            <a href="/detail/<?= $row['id_transaksi']; ?>" class="sign_cta">Detail</a>
+                        </td>
+                        <td>$<?= $row['total_transaksi']; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</section>
 
 <?= $this->endSection('content'); ?>

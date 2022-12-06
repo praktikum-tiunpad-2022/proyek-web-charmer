@@ -32,4 +32,11 @@ class Barang extends Model
     public function deleteBarang($id_brg) {
         return $this->delete($id_brg);
     }
+
+    public function getAll() {
+        $builder = $this->db->table('barang');
+        $builder->join('kategori', 'kategori.id_kategori = barang.id_kategori');
+        $query = $builder->get();
+        return $query->getResult();
+    }
 }

@@ -18,17 +18,17 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($Barang as $row) : ?>
+                <?php foreach($Barang as $row => $value) : ?>
                     <tr>
-                        <td><?= $row['img_brg']; ?></td>
-                        <td><?= $row['nama_brg']; ?></td>
-                        <td><?= $row['nama_artis']; ?></td>
-                        <td>$<?= $row['harga_brg']; ?></td>
-                        <td><?= $row['stok_brg']; ?></td>
-                        <td><?= $row['id_kategori']; ?></td>
+                        <td><img src="assets/img/<?=$value->img_brg?>" style="width: 250px;"></td>
+                        <td><?= $value->nama_brg ?></td>
+                        <td><?= $value->nama_artis ?></td>
+                        <td>$<?= $value->harga_brg ?></td>
+                        <td><?= $value->stok_brg ?></td>
+                        <td><?= $value->nama_kategori ?></td>
                         <td>
-                            <a href="/edit/<?= $row['id_brg']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                            <a href="/delete/<?= $row['id_brg']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                            <a href="/edit/<?= $value->id_brg ?>" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="/delete/<?= $value->id_brg ?>" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

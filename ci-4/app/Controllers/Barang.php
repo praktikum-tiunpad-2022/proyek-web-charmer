@@ -4,24 +4,33 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Barang as BarangModel;
+use App\Models\Kategori as KategoriModel;
 
 class Barang extends BaseController
 {
+    protected $helpers = ['barang'];
+
+    function __construct()
+    {
+        $this->barang = new BarangModel();
+        $this->kategori = new KategoriModel();
+    }
     public function index()
     {
-        $model  = new BarangModel();
         $data   = [
-            'Barang' => $model->getBarang(),
+            'Barang' => $this->barang->getAll(),
         ];
         return view('Barang', $data);
     }
 
     public function create() {
-        return view('add');
+        $data = [
+            'Kategori' => $this->kategori->findAll(),
+        ];
+        return view('add', $data);
     }
 
     public function save() {
-        $model  = new BarangModel();
         $data   = [
             'nama_brg' => $this->request->getPost('nama_brg'), 
             'nama_artis' => $this->request->getPost('nama_artis'), 
@@ -30,20 +39,18 @@ class Barang extends BaseController
             'img_brg' => $this->request->getPost('img_brg'),
             'id_kategori' => $this->request->getPost('id_kategori'),
         ];
-        $model->saveBarang($data);
+        $this->barang->saveBarang($data);
         return redirect()->to('/barang');
     }
 
     public function edit($id_brg) {
-        $model  = new BarangModel();
         $data   = [
-            'Barang' => $model->getBarang($id_brg),
+            'Barang' => $this->barang->getBarang($id_brg),
         ];
         return view('edit',$data);
     }
     
     public function update($id_brg) {
-        $model  = new BarangModel();
         $data   = [
             'nama_brg' => $this->request->getPost('nama_brg'), 
             'nama_artis' => $this->request->getPost('nama_artis'), 
@@ -52,13 +59,12 @@ class Barang extends BaseController
             'img_brg' => $this->request->getPost('img_brg'),
             'id_kategori' => $this->request->getPost('id_kategori'),
         ];
-        $model->updateBarang($id_brg, $data);
+        $this->barang->updateBarang($id_brg, $data);
         return redirect()->to('/barang');
     }
 
     public function delete($id_brg) {
-        $model  = new BarangModel();
-        $model->deleteBarang($id_brg);
+        $this->barang->deleteBarang($id_brg);
         return redirect()->to('/barang');
     }
 }
