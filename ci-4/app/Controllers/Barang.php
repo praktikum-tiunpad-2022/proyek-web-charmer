@@ -15,6 +15,7 @@ class Barang extends BaseController
         $this->barang = new BarangModel();
         $this->kategori = new KategoriModel();
     }
+    
     public function index()
     {
         $data   = [

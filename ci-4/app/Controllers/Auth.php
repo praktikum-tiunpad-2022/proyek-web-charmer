@@ -30,7 +30,7 @@ class Auth extends BaseController
                 $user = $model->where('email',$this->request->getVar('email'))->first();
                 $this->setUserSession($user);
                 session()->setFlashData('success','Login Success!');
-                return redirect()->to('home');
+                return redirect()->to('dashboard');
             }
         }
         return view('login',$data);
@@ -67,7 +67,7 @@ class Auth extends BaseController
                 ];
                 $model->save($data);
                 session()->setFlashData('success','Register Success!');
-                return redirect()->to('/');
+                return redirect()->to('/admin');
             }
         }
         return view('register',$data);
@@ -75,6 +75,6 @@ class Auth extends BaseController
 
     public function logout() {
         session()->destroy();
-        return redirect()->to('/');
+        return redirect()->to('/admin');
     }
 }

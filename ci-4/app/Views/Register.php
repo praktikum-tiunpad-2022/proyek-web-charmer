@@ -23,7 +23,7 @@
     <?php endif; ?>
     <section class="login">
 		<div class="form-container">
-            <form action="/register" method="post">
+            <form action="register" method="post">
             <h2>Sign Up</h2>
                 <input type="text" name="nama_adm" placeholder="Enter Your Name" value="<?= set_value('nama_adm') ?>" required>
 				<input type="text" name="email" placeholder="Enter Your Email" value="<?= set_value('email') ?>" required>
@@ -33,7 +33,7 @@
                     <?= $validation->listErrors() ?>
                 <?php endif; ?>
                 <input type="submit" name="register" value="Sign Up Now!" class="form-btn">
-				<p>Already Have an Account? <a class="sign-cta" href="/">Sign In Now!</a></p>
+				<p>Already Have an Account? <a class="sign-cta" href="/admin">Sign In Now!</a></p>
             </form>
         </div>
     </section>

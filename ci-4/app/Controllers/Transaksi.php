@@ -8,22 +8,37 @@ use App\Models\Cart as CartModel;
 
 class Transaksi extends BaseController
 {
+    protected $helpers = ['transaksi'];
+
+    function __construct()
+    {
+        $this->transaksi = new TransaksiModel();
+        $this->cart = new CartModel();
+    }
+
     public function index()
     {
-        $model  = new TransaksiModel();
         $data   = [
-            'Transaksi' => $model->getTransaksi(),
+            'Transaksi' => $this->transaksi->getTransaksi(),
+            'Cart' => $this->cart->getCart1(),
         ];
         return view('Transaksi', $data);
     }
 
     public function home()
     {
-        $model  = new TransaksiModel();
         $data   = [
-            'Transaksi' => $model->getTransaksi(),
+            'Transaksi' => $this->transaksi->getTransaksi(),
         ];
-        return view('Home', $data);
+        return view('Dashboard', $data);
+    }
+
+    public function detail($id_transaksi) {
+        $data   = [
+            'Transaksi' => $this->transaksi->getTransaksi($id_transaksi),
+            'Cart' => $this->cart->getAll(),
+        ];
+        return view('Detail', $data);
     }
 
     public function create2() {
@@ -31,7 +46,7 @@ class Transaksi extends BaseController
     }
 
     public function save2() {
-        $model  = new TransaksiModel();
+        $this->transaksi  = new TransaksiModel();
         $data   = [
             'total_transaksi' => $this->request->getPost('total_transaksi'), 
             'tgl_transaksi' => $this->request->getPost('tgl_transaksi'), 
@@ -44,20 +59,20 @@ class Transaksi extends BaseController
             'telp_buyer' => $this->request->getPost('telp_buyer'),
             'order' => $this->request->getPost('order'),
         ];
-        $model->saveTransaksi($data);
+        $this->transaksi->saveTransaksi($data);
         return redirect()->to('/transaksi');
     }
 
     public function edit2($id_transaksi) {
-        $model  = new TransaksiModel();
+        $this->transaksi  = new TransaksiModel();
         $data   = [
-            'Transaksi' => $model->getTransaksi($id_transaksi),
+            'Transaksi' => $this->transaksi->getTransaksi($id_transaksi),
         ];
         return view('edit',$data);
     }
     
     public function update2($id_transaksi) {
-        $model  = new TransaksiModel();
+        $this->transaksi  = new TransaksiModel();
         $data   = [
             'total_transaksi' => $this->request->getPost('total_transaksi'), 
             'tgl_transaksi' => $this->request->getPost('tgl_transaksi'), 
@@ -70,21 +85,13 @@ class Transaksi extends BaseController
             'telp_buyer' => $this->request->getPost('telp_buyer'),
             'order' => $this->request->getPost('order'),
         ];
-        $model->updateTransaksi($id_transaksi, $data);
+        $this->transaksi->updateTransaksi($id_transaksi, $data);
         return redirect()->to('/transaksi');
     }
 
     public function delete2($id_transaksi) {
-        $model  = new TransaksiModel();
-        $model->deleteTransaksi($id_transaksi);
+        $this->transaksi  = new TransaksiModel();
+        $this->transaksi->deleteTransaksi($id_transaksi);
         return redirect()->to('/transaksi');
-    }
-
-    public function detail($id_transaksi) {
-        $model  = new CartModel();
-        $data   = [
-            'Cart' => $model->getCart1($id_transaksi),
-        ];
-        return view('Detail', $data);
     }
 }
