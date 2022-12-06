@@ -10,7 +10,7 @@ class User extends Model
     protected $primaryKey       = 'id_adm';
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'nama_adm','usn_adm', 'pass_adm'
+        'nama_adm','email','password'
     ];
 
     protected $allowCallbacks = true;

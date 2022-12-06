@@ -2,44 +2,21 @@
 
 <?= $this->section('content'); ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Daftar Transaksi</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <style>
-        body{
-            width: auto;
-            margin: auto;
-            background-color: #f08080;
-            border-radius: 20px;
-            padding: 20px 30px;
-        }
-
-        h1{
-            text-align: center;
-        }
-        </style>
-    </head>
-
-    <body>
-        <h1>Data Table Transaksi</h1>
-        <table class="table table-warning">
-            <thead class="thead-dark">
+<section class="dashboard">
+    <div class="content">
+        <h2 class="product-category">Transaction</h2>
+        <table class="table table-bordered">
+            <thead>
                 <tr>
-                    <th scope="col">Tanggal</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Alamat</th>
-                    <th scope="col">No. Handphone</th>
-                    <th scope="col">Nama Rekening</th>
-                    <th scope="col">No. Rekening</th>
-                    <th scope="col">Bank</th>
-                    <th scope="col">Order</th>
-                    <th scope="col">Total</th>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>Name on Card</th>
+                    <th>Card Number</th>
+                    <th>Bank</th>
+                    <th>Order</th>
+                    <th>Total</th>
                 </tr>
             </thead>
             <tbody>
@@ -55,12 +32,12 @@
                         <td>
                             <a href="/detail/<?= $row['id_transaksi']; ?>" class="btn btn-warning">Detail</a>
                         </td>
-                        <td><?= $row['total_transaksi']; ?></td>
+                        <td>$<?= $row['total_transaksi']; ?></td>
                     </tr>
                     <?php endforeach; ?>
             </tbody>
         </table>
-    </body>
-</html>
+    </div>
+</section>
 
 <?= $this->endSection('content'); ?>

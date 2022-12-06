@@ -17,7 +17,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Auth');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -35,28 +35,26 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-//$routes->match(['get','post'],'/', 'Auth::index');
-//$routes->get('logout','Auth::logout');
+$routes->match(['get','post'],'/', 'Auth::index');
+$routes->get('logout','Auth::logout');
+$routes->get('home','Home::index',['filter' => 'auth']);
+$routes->get('barang','Barang::index',['filter' => 'auth']);
+$routes->get('transaksi','Transaksi::index',['filter' => 'auth']);
+$routes->get('kategori','Kategori::index',['filter' => 'auth']);
 
-$routes->get('/', 'Home::index');
-
-//$routes->get('/','Barang::index');
-$routes->get('/barang','Barang::index');
+//$routes->get('/home', 'Home::index');
 $routes->get('new','Barang::create');
-$routes->post('/','Barang::save');
+$routes->post('/save','Barang::save');
 $routes->get('edit/(:num)','Barang::edit/$1');
 $routes->post('edit/(:num)','Barang::update/$1');
 $routes->get('delete/(:num)','Barang::delete/$1');
-$routes->get('/transaksi','Transaksi::index');
 $routes->post('detail/(:num)','Transaksi::detail/$1');
-$routes->get('/kategori','Kategori::index');
 $routes->get('create','Kategori::create1');
 $routes->post('/kategori','Kategori::save1');
 $routes->get('edit_ktg/(:num)','Kategori::edit1/$1');
 $routes->post('edit_ktg/(:num)','Kategori::update1/$1');
 $routes->get('delete_ktg/(:num)','Kategori::delete1/$1');
-//$routes->match(['get','post'], 'register', 'Auth::register');
-//$routes->get('barang','Barang::index',['filter' => 'auth']);
+$routes->match(['get','post'], 'register', 'Auth::register');
 
 /*
  * --------------------------------------------------------------------

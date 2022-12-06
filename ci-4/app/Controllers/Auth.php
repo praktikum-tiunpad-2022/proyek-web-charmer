@@ -13,12 +13,12 @@ class Auth extends BaseController
         helper(['form']);
         if($this->request->getMethod() == 'post') {
             $rules = [
-                'usn_adm' => 'required|min_length[5]|max_length[50]',
-                'password' => 'required|min_length[6]|max_length[32]|validateUser[usn_adm,password]',
+                'email' => 'required|min_length[6]|max_length[50]|valid_email',
+                'password' => 'required|min_length[8]|max_length[32]|validateUser[email,password]',
             ];
             $errors = [
                 'password' => [
-                    'validateUser' => 'Username or password don\'t match'
+                    'validateUser' => 'Email or password don\'t match'
                 ]
             ];
 
@@ -27,10 +27,10 @@ class Auth extends BaseController
             }else {
                 $model = new UserModel();
 
-                $user = $model->where('usn_adm',$this->request->getVar('usn_adm'))->first();
+                $user = $model->where('email',$this->request->getVar('email'))->first();
                 $this->setUserSession($user);
                 session()->setFlashData('success','Login Success!');
-                return redirect()->to('barang');
+                return redirect()->to('home');
             }
         }
         return view('login',$data);
@@ -38,7 +38,7 @@ class Auth extends BaseController
 
     private function setUserSession($user) {
         $data = [
-            'usn_adm' => $user['usn_adm'],
+            'email' => $user['email'],
             'isLoggedIn' => true,
         ];
         session()->set($data);
@@ -50,10 +50,9 @@ class Auth extends BaseController
         helper(['form']);
         if($this->request->getMethod() == 'post') {
             $rules = [
-                'id_adm' => 'required',
-                'nama_adm' => 'required|min_length[5]|max_length[50]',
-                'usn_adm' => 'required|min_length[5]|max_length[50]|is_unique[admin.usn_adm]',
-                'password' => 'required|min_length[5]|max_length[32]',
+                'nama_adm' => 'required|min_length[6]|max_length[50]|',
+                'email' => 'required|min_length[6]|max_length[50]|valid_email|is_unique[admin.email]',
+                'password' => 'required|min_length[8]|max_length[32]',
                 'password_confirm' => 'matches[password]',
             ];
             if(!$this->validate($rules)) {
@@ -62,10 +61,9 @@ class Auth extends BaseController
                 $model = new UserModel();
 
                 $data = [
-                    'id_adm' => $this->request->getVar('id_adm'),
                     'nama_adm' => $this->request->getVar('nama_adm'),
-                    'usn_adm' => $this->request->getVar('usn_adm'),
-                    'pass_adm' => $this->request->getVar('pass_adm'),
+                    'email' => $this->request->getVar('email'),
+                    'password' => $this->request->getVar('password'),
                 ];
                 $model->save($data);
                 session()->setFlashData('success','Register Success!');

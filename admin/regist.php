@@ -5,17 +5,16 @@
     $error = "";
     
     if(isset($_POST['register'])) {
-        $usn_adm = $_POST['usn_adm'];
+        $email = $_POST['email'];
         $pass = MD5($_POST['pass']);    // password dienkripsi
-        $tgl = date("Y-m-d H:i:s");
 
-        $query = mysqli_query($connect, "SELECT * FROM admin WHERE usn_adm = '$usn_adm'");
+        $query = mysqli_query($connect, "SELECT * FROM admin WHERE email = '$email'");
         $row = mysqli_num_rows($query);
 
         if($row == 1) {
             $error = "Username Already Taken!";
         } else {
-			$regist = mysqli_query($connect, "INSERT INTO admin (usn_adm, tgl_akun_admin, pass_adm) VALUES ('$usn_adm', '$tgl', '$pass')");
+			$regist = mysqli_query($connect, "INSERT INTO admin (email, password) VALUES ('$email', '$pass')");
 			echo "<meta http-equiv='refresh' content='0,url=".BASE_URL."admin/login.php'>";
         }
     }
@@ -41,7 +40,7 @@
 			<div class="form-container">
 				<form action="#" method="post">
 					<h2>Sign Up</h2>
-					<input type="text" name="usn_adm" placeholder="Enter Your Username" required=" ">
+					<input type="text" name="email" placeholder="Enter Your Username" required=" ">
 					<input type="password" name="pass" placeholder="Enter Your Password" required=" ">
 					<input type="submit" name="register" value="Sign Up Now!" class="form-btn">
 					<p>Already Have an Account? <a class="sign-cta" href="login.php">Sign In Now!</a></p>
