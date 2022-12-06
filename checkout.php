@@ -4,7 +4,7 @@
 ?>
 		<section class="product"> 
 			<div class="content">
-				<h2 class="product-category">Cart!</h2>
+				<h2 class="product-category">Checkout</h2>
 				<h4 class="cart-products">Your shopping cart contains: 
 					<span><?php echo $row_count;?> products.
 				</h4>
@@ -69,6 +69,7 @@
 						}
 					};
 				?>
+			</div>
 		</section>
         <section class="grand-total">
             <div class="content">

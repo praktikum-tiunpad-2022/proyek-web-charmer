@@ -45,7 +45,6 @@
             <div class="navbar">
                 <ul>
                     <li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                    <li><a href="cart.php"><span></span><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                     <li><a href="logout.php"><i class="fa fa-sign-in-alt" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
@@ -57,9 +56,10 @@
 					<input type="text" name="usn" placeholder="Enter Your Username" required=" ">
 					<input type="password" name="pass" placeholder="Enter Your Password" required=" ">
 					<input type="submit" name="login" value="Sign In Now!" class="form-btn">
+					<p><?=$error;?></p>
 					<p>Don't Have an Account? <a class="sign-cta" href="regist.php"><u>Sign Up Now!</u></a></p>
+					<p>Sign In as Admin? <a class="sign-cta" href="admin/login.php"><u>Sign In Here!</u></a></p>
 				</form>
-                <p><?=$error;?></p>
 			</div>
 		</section>
 <?php 

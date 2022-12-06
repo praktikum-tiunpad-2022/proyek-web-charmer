@@ -5,16 +5,16 @@
     $error = "";
 
     if(isset($_POST['login'])) {
-        $email = $_POST['email'];
+        $usn_adm = $_POST['usn_adm'];
         $pass = MD5($_POST['pass']);    // password dienkripsi
 
-        $result = mysqli_query($connect, "SELECT * FROM admin WHERE email = '$email' && password = '$pass'");
+        $result = mysqli_query($connect, "SELECT * FROM admin WHERE usn_adm = '$usn_adm' && pass_adm = '$pass'");
         $row = mysqli_num_rows($result);
 
         if($row == 1) {
 			$row = mysqli_fetch_assoc($result);
 			$id_adm = $row['id_adm'];
-			$_SESSION['email'] = $email;
+			$_SESSION['usn_adm'] = $usn_adm;
 			$_SESSION['id_adm'] = $id_adm;
 			echo "<meta http-equiv='refresh' content='0,url=".BASE_URL."admin/index.php'>";
         } else {
@@ -43,12 +43,13 @@
 			<div class="form-container">
 				<form action="#" method="post">
 					<h2>Sign In</h2>
-					<input type="text" name="email" placeholder="Enter Your Username" required=" ">
+					<input type="text" name="usn_adm" placeholder="Enter Your Username" required=" ">
 					<input type="password" name="pass" placeholder="Enter Your Password" required=" ">
 					<input type="submit" name="login" value="Sign In Now!" class="form-btn">
+                    <p><?=$error;?></p>
 					<p>Don't Have an Account? <a class="sign-cta" href="regist.php"><u>Sign Up Now!</u></a></p>
+					<p>Sign In as Buyer? <a class="sign-cta" href="../login.php"><u>Sign In Here!</u></a></p>
 				</form>
-                <p><?=$error;?></p>
 			</div>
 		</section>
     </body>

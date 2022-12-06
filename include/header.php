@@ -29,7 +29,7 @@
             </ul>
             <div class="navbar">
                 <ul>
-                    <li><i class="fa fa-user" aria-hidden="true"></i></a>  Hi, <?php echo $_SESSION['usn'];?>!</li>
+                    <li><a href="user.php"><i class="fa fa-user" aria-hidden="true"></i> </a>  Hi, <?php echo $_SESSION['usn'];?>!</li>
                     <?php
                         $select_rows = mysqli_query($connect, "SELECT * FROM cart WHERE status = '1' AND id_buyer = '$idbuyer'") or die("query failed");
                         $row_count = mysqli_num_rows($select_rows);
