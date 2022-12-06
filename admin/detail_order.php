@@ -5,7 +5,7 @@
 ?>
         <section class="dashboard">
             <div class="content">
-                <h2 class="product-category">Detail Order  <a class="btn-cart" href="barang_tambah.php">Back<i class="fa fa-times"></i></a></h2>
+                <h2 class="product-category">Detail Order  <a class="btn-cart" href="penjualan.php">Back<i class="fa fa-times"></i></a></h2>
                 <table class="table table-bordered">
                     <thead>
                         <tr>

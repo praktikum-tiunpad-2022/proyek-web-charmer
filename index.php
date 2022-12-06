@@ -21,42 +21,42 @@
 				<div class="offers-container">
 					<div class="offers-card">
 						<div class="offers-image">
-							<a href="product.php">
+							<a href="products.php">
 								<img src="assets/img/new.jpg" class="offers-thumb" alt="">
 							</a>
 						</div>
 					</div>
 					<div class="offers-card">
 						<div class="offers-image">
-							<a href="product.php">
+							<a href="products.php">
 								<img src="assets/img/discount.jpg" class="offers-thumb" alt="">
 							</a>
 						</div>
 					</div>
 					<div class="offers-card">
 						<div class="offers-image">
-							<a href="product.php">
+							<a href="products.php">
 								<img src="assets/img/offer.jpg" class="offers-thumb" alt="">
 							</a>
 						</div>
 					</div>
 					<div class="offers-card">
 						<div class="offers-image">
-							<a href="product.php">
+							<a href="products.php">
 								<img src="assets/img/new.jpg" class="offers-thumb" alt="">
 							</a>
 						</div>
 					</div>
 					<div class="offers-card">
 						<div class="offers-image">
-							<a href="product.php">
+							<a href="products.php">
 								<img src="assets/img/discount.jpg" class="offers-thumb" alt="">
 							</a>
 						</div>
 					</div>
 					<div class="offers-card">
 						<div class="offers-image">
-							<a href="product.php">
+							<a href="products.php">
 								<img src="assets/img/offer.jpg" class="offers-thumb" alt="">
 							</a>
 						</div>
